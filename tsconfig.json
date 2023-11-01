@@ -1,7 +1,6 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
   "include": ["src/**/*"],
-  "exclude": [".eslintrc.js"],
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "dist",
@@ -10,5 +9,4 @@
     "downlevelIteration": true,
     "declaration": true
   },
-
 }
