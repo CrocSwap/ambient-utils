@@ -1,4 +1,4 @@
-import { TradeTableDataRow } from "../../../types";
+import { TradeTableDataRow } from "../../../src/types";
 import { getAddress } from 'ethers';
 import { fetchEnsAddresses } from "../../api/addressManagement/fetchENSAddresses";
 

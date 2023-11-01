@@ -1,7 +1,7 @@
 import { batchFetchAndCacheENSAddressData } from '../../src/dataLayer/addressManagement/batchFetchAndCacheENSAddressData';
 import { fetchEnsAddresses } from '../../src/api/addressManagement/fetchENSAddresses';
 import { getAddress } from 'ethers';
-import { TradeTableDataRow } from '../../types';
+import { TradeTableDataRow } from '../../src/types';
 
 jest.mock('../../src/api/addressManagement/fetchENSAddresses');
 jest.mock('ethers');

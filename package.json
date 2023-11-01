@@ -4,8 +4,9 @@
   "license": "MIT",
   "author": "surudhb",
   "main": "dist/index.js",
-  "module": "dist/ambient-data-and-controls.esm.js",
+  "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
+  "module": "dist/ambient-data-and-controls.esm.js",
   "files": [
     "dist",
     "src"
