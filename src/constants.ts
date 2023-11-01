@@ -1,0 +1,1 @@
+export const ANALYTICS_URL = 'https://crocswap-analytics-tools-service-dfxb5x3tja-uc.a.run.app/run?';
