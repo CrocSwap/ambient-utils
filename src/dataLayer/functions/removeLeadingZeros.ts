@@ -1,4 +1,4 @@
-const removeLeadingZeros = (numStr: string) => {
+export const removeLeadingZeros = (numStr: string) => {
   const parts = numStr.split('.');
 
   let integerPart = numStr.includes('e') ? parseFloat(parts[0]) : parseInt(parts[0]);
@@ -9,5 +9,3 @@ const removeLeadingZeros = (numStr: string) => {
 
   return `${integerPart}${decimalPart}`;
 };
-
-export default removeLeadingZeros;

@@ -4,7 +4,6 @@ export * from './defaultTokens';
 export * from './slippage';
 export * from './tokenListURIs';
 export * from './tokenUnicodeCharMap';
-
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 // allow a local environment variable to be defined in [app_repo]/.env.local to set a name for dev environment
@@ -21,14 +20,18 @@ export const ANALYTICS_URL =
   process.env.REACT_APP_ANALYTICS_URL ||
   'https://crocswap-analytics-tools-service-dfxb5x3tja-uc.a.run.app/run?';
 
+export const GCGO_ETHEREUM_URL = process.env.REACT_APP_GCGO_ETHEREUM_URL || 'https://ambindexer.net/gcgo';
+export const GCGO_SCROLL_URL = process.env.GCGO_SCROLL_URL || 'https://ambindexer.net/scroll-gcgo';
+export const GCGO_OVERRIDE_URL = process.env.REACT_APP_GCGO_OVERRIDE_URL;
+
 export const GRAPHCACHE_URL = process.env.REACT_APP_GRAPHCACHE_URL || 'https://ambindexer.net';
 
 export const GRAPHCACHE_SMALL_URL = process.env.REACT_APP_GRAPHCACHE_SMALL_URL;
 
-export const GRAPHCACHE_WSS_URL =
-  process.env.REACT_APP_GRAPHCACHE_WSS_URL || GRAPHCACHE_URL.replace('http', 'ws');
+export const HISTORICAL_CANDLES_URL =
+  process.env.REACT_APP_HISTORICAL_CANDLES_URL || 'https://ambindexer.net';
 
-export const CHAT_BACKEND_URL = process.env.REACT_APP_CHAT_URL || `${GRAPHCACHE_URL}`;
+export const CHAT_BACKEND_URL = process.env.REACT_APP_CHAT_URL || `${HISTORICAL_CANDLES_URL}`;
 
 export const CHAT_BACKEND_WSS_URL =
   process.env.REACT_APP_CHAT_WSS_URL || CHAT_BACKEND_URL.replace('http', 'ws');

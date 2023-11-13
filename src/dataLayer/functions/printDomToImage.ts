@@ -1,6 +1,6 @@
 import { domToBlob } from 'modern-screenshot';
 
-const printDomToImage = async (
+export const printDomToImage = async (
   node: HTMLElement,
   background?: string,
   additionalStyles?: Partial<CSSStyleDeclaration>,
@@ -25,5 +25,3 @@ const printDomToImage = async (
     console.error('oops, something went wrong!', e);
   }
 };
-
-export default printDomToImage;
