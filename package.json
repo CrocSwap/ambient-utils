@@ -1,5 +1,5 @@
 {
-  "name": "ambient-data-and-controls",
+  "name": "@crocswap-libs/ambient-utils",
   "version": "0.1.0",
   "license": "MIT",
   "author": "surudhb",
@@ -40,7 +40,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=12"
   },
@@ -55,6 +54,7 @@
     }
   ],
   "devDependencies": {
+    "@types/d3": "^7.1.0",
     "@size-limit/preset-small-lib": "^10.0.1",
     "@tsconfig/recommended": "^1.0.3",
     "dts-cli": "^2.0.3",
@@ -66,6 +66,11 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "ethers": "^6.8.1"
+    "@covalenthq/client-sdk": "^0.2.6",
+    "@crocswap-libs/sdk": "^0.2.79",
+    "d3": "^7.4.4",
+    "ethers": "^5.6.5",
+    "modern-screenshot": "^4.4.25",
+    "numbro": "^2.3.6"
   }
 }
