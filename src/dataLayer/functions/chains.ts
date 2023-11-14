@@ -18,7 +18,9 @@ export function getSupportedChainIds(): Array<string> {
 export function getDefaultChainId(): string {
   return getSupportedChainIds()[0];
 }
-
+export function getDefaultPairForChain(chainId: string) {
+  return [supportedNetworks[chainId].defaultPair[0], supportedNetworks[chainId].defaultPair[1]];
+}
 // Given a chain ID returns the relevant block explorer URL
 export function getChainExplorer(chainId: string | number): string {
   try {

@@ -2,6 +2,7 @@
 
 import { memoizePromiseFn } from '../dataLayer/functions/memoizePromiseFn';
 import { translateTestnetToken } from '../dataLayer/functions/testnetTokenMap';
+import { supportedNetworks } from '../constants/networks';
 import { ANALYTICS_URL } from '../constants';
 
 const randomNum = Math.random();
@@ -14,8 +15,17 @@ export const fetchTokenPrice = async (
 ) => {
   const address = translateTestnetToken(dispToken);
 
+  const defaultPair = supportedNetworks[chain].defaultPair;
+
   try {
     if (address) {
+      if (address.toLowerCase() === defaultPair[1].address.toLowerCase()) {
+        return {
+          usdPrice: 0.9995309916951084,
+          usdPriceFormatted: 1,
+        };
+      }
+
       const response = await fetch(
         ANALYTICS_URL +
           new URLSearchParams({
@@ -23,7 +33,7 @@ export const fetchTokenPrice = async (
             config_path: 'price',
             include_data: '0',
             token_address: address,
-            asset_platform: chain === '0x82750' ? 'scroll' : 'ethereum',
+            asset_platform: chain === '0x82750' || chain === '0x8274f' ? 'scroll' : 'ethereum',
           })
       );
       const result = await response.json();

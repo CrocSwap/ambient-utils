@@ -1,5 +1,5 @@
 import { ChainSpec, CrocEnv } from '@crocswap-libs/sdk';
-import { GRAPHCACHE_SMALL_URL, GRAPHCACHE_URL } from '../constants';
+import { GCGO_OVERRIDE_URL, HISTORICAL_CANDLES_URL } from '../constants';
 import { CandlesByPoolAndDurationIF, CandleDataIF, CandleDataServerIF } from '../types/candleData';
 import { TokenPriceFn } from './fetchTokenPrice';
 
@@ -39,7 +39,7 @@ export async function fetchCandleSeriesHybrid(
     return candles;
   }
 
-  if (endTime === 0) {
+  if (endTime == 0) {
     endTime = Math.floor(Date.now() / 1000);
   }
 
@@ -97,11 +97,11 @@ export async function fetchCandleSeriesCroc(
     return undefined;
   }
 
-  const candleSeriesEndpoint = GRAPHCACHE_SMALL_URL
-    ? GRAPHCACHE_SMALL_URL + '/pool_candles'
+  const candleSeriesEndpoint = GCGO_OVERRIDE_URL
+    ? GCGO_OVERRIDE_URL + '/pool_candles'
     : graphCacheUrl + '/pool_candles';
 
-  if (endTime === 0) {
+  if (endTime == 0) {
     endTime = Math.floor(Date.now() / 1000);
   }
 
@@ -278,11 +278,11 @@ async function fetchCandleSeriesUniswap(
     mainnetQuoteTokenAddress
   );
 
-  const httpGraphCacheServerDomain = GRAPHCACHE_URL;
+  const httpGraphCacheServerDomain = HISTORICAL_CANDLES_URL;
   if (isFetchEnabled) {
     try {
       if (httpGraphCacheServerDomain) {
-        const candleSeriesCacheEndpoint = GRAPHCACHE_URL + '/candle_series?';
+        const candleSeriesCacheEndpoint = HISTORICAL_CANDLES_URL + '/candle_series?';
 
         return fetch(
           candleSeriesCacheEndpoint +

@@ -27,7 +27,7 @@ export const fetchTokenBalances = async (
   address: string,
   chain: string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _lastBlockNumber: number,
+  _refreshTime: number,
   cachedTokenDetails: FetchContractDetailsFn,
   crocEnv: CrocEnv | undefined,
   graphCacheUrl: string,
@@ -91,13 +91,13 @@ export const fetchTokenBalances = async (
 
   const covalentData = covalentBalancesResponse.data.items;
 
-  covalentData.forEach((tokenBalance) => {
+  covalentData.map((tokenBalance) => {
     const newToken: TokenIF = getTokenInfoFromCovalentBalance(tokenBalance);
     combinedBalances.push(newToken);
   });
 
   if (dexBalancesFromCache !== undefined) {
-    dexBalancesFromCache.forEach((balanceFromCache: IDepositedTokenBalance) => {
+    dexBalancesFromCache.map((balanceFromCache: IDepositedTokenBalance) => {
       const indexOfExistingToken = (combinedBalances ?? []).findIndex(
         (existingToken) => existingToken.address === balanceFromCache.token
       );
@@ -124,7 +124,7 @@ export const fetchTokenBalances = async (
 export type TokenBalancesQueryFn = (
   address: string,
   chain: string,
-  lastBlock: number,
+  refreshTime: number,
   cachedTokenDetails: FetchContractDetailsFn,
   crocEnv: CrocEnv | undefined,
   graphCacheUrl: string,
