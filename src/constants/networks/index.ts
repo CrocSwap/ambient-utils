@@ -16,3 +16,9 @@ export const supportedNetworks = {
 export function getDefaultPairForChain(chainId: string): [TokenIF, TokenIF] {
   return [supportedNetworks[chainId].defaultPair[0], supportedNetworks[chainId].defaultPair[1]];
 }
+
+export { arbitrumGoerli };
+export { ethereumGoerli };
+export { ethereumMainnet };
+export { scrollMainnet };
+export { scrollSepolia };
