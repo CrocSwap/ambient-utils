@@ -1,10 +1,12 @@
 // Exports from ambient-data-and-controls
 
+// Figure out why exports are not working i.e. utils/dataLayer but utils is
+
 // Data Layer
-export * from './dataLayer';
+export * as dataLayer from './dataLayer';
 
 // Types
-export * from './types';
+export * as types from './types';
 
 // Constants
-export * from './constants';
+export * as constants from './constants';

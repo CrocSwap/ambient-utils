@@ -1,5 +1,5 @@
 {
-  "name": "ambient-data-and-controls",
+  "name": "@crocswap-libs/ambient-utils",
   "version": "0.1.0",
   "license": "MIT",
   "author": "surudhb",
@@ -38,9 +38,15 @@
     "trailingComma": "es5"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(wagmi|@wagmi/core)/)"
+    ]
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=12"
   },
@@ -55,17 +61,24 @@
     }
   ],
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.23.3",
     "@size-limit/preset-small-lib": "^10.0.1",
     "@tsconfig/recommended": "^1.0.3",
+    "@types/d3": "^7.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "babel-jest": "^29.7.0",
     "dts-cli": "^2.0.3",
+    "eslint": "^8.53.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "size-limit": "^10.0.1",
+    "ts-jest": "^29.1.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^4.4.2"
   },
   "dependencies": {
-    "ethers": "^6.8.1"
   }
 }

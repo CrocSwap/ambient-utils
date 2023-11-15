@@ -1,4 +1,2 @@
-// Exports from Address Management
-
-// Addresses, ENS addresses 
+// Addresses, ENS addresses
 export * from './batchFetchAndCacheENSAddressData';
